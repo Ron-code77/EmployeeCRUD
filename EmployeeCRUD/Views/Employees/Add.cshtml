@@ -1,0 +1,33 @@
+﻿@model EmployeeCRUD.Models.AddEmployeeViewModel
+@{
+}
+<h1>Add Employee</h1>
+<form method="post" action="Add" class="mt-5" asp-validation-summary="All">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="EmployeeName" required>
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" required>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Salary</label>
+        <input type="number" class="form-control" asp-for="Salary" required>
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" asp-for="DateofBirth" required>
+        <span asp-validation-for="DateofBirth" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Department</label>
+        <input type="text" class="form-control" asp-for="Department" required>
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

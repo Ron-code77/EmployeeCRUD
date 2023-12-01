@@ -1,0 +1,37 @@
+﻿@model List<EmployeeCRUD.Models.Domain.Employee>
+
+<h1>Employees</h1>
+<table class="table table-bordered table-striped" style="background-color: darkblue; color: white;">
+    <thead class="thead-dark">
+        <tr>
+          
+            <th>Sl No</th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewBag.NameSortParam" style="color: black;">
+                    @Html.DisplayNameFor(model => model[0].EmployeeName)
+                </a>
+            </th>
+            <th>Email</th>
+            <th>Salary</th>
+          
+            <!-- <th>Date of Birth</th> -->
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@(Model.IndexOf(employee) + 1)</td>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.Email</td>
+                <td>@employee.Salary</td>
+               
+                <!-- <td>@employee.DateofBirth.ToString("dd-MM-yyyy")</td> -->
+                <td>@employee.Department</td>
+                <td><a asp-controller="Employees" asp-action="View" asp-route-id="@employee.EmployeeId" class="btn btn-info">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
